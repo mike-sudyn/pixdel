@@ -1,11 +1,11 @@
-@imagesPath: '../assets/images/';
+$imagesPath: '/images/';
 
 html {
     height: 100%;
 }
 
 body {
-    background: #000 url('@{imagesPath}background.png') repeat 50% 0;
+    background: #000 url('#{$imagesPath}background.png') repeat 50% 0;
     margin: 0;
     height: 100%;
 }
@@ -29,54 +29,6 @@ ul {
     img {
         height: 1px;
         width: 1px;
-    }
-}
-
-@keyframes loading {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -40px;
-    margin-left: -40px;
-
-    .loader-1,
-    .loader-2,
-    .loader-3 {
-        border-radius: 3px;
-        position: absolute;
-        transition: 0.4s linear all;
-        width: 80px;
-        height: 80px;
-        border: 1px solid rgb(0,153,153);
-        background: rgb(0,153,153);
-        background: linear-gradient(135deg, rgba(0,153,153,1) 0%, rgba(51,204,204,1) 40%, rgba(92,204,204,1) 60%, rgba(0,124,122,1) 100%);
-    }
-    .loader-1 {
-        animation: loading 1s infinite;
-        left: -90px;
-    }
-    .loader-2 {
-        animation: loading 1s 0.1s infinite;
-        left: 0;
-    }
-    .loader-3 {
-        animation: loading 1s 0.2s infinite;
-        left: 90px;
     }
 }
 
@@ -382,56 +334,56 @@ ul {
     &[data-type="burger"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/icons/burger.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/icons/burger.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="flash"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/icons/flash.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/icons/flash.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="airplane"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/icons/airplane.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/icons/airplane.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="camera"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/icons/camera.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/icons/camera.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="quaver"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/icons/quaver.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/icons/quaver.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="settings"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/icons/settings.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/icons/settings.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="theater"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/icons/theater.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/icons/theater.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="light-bulb"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/icons/light-bulb.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/icons/light-bulb.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
@@ -440,56 +392,56 @@ ul {
     &[data-type="balloon"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}jpg/balloon.jpg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}jpg/balloon.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="fire"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}jpg/fire.jpg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}jpg/fire.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="fireworks"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}jpg/fireworks.jpg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}jpg/fireworks.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="lake"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}jpg/lake.jpg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}jpg/lake.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="rooftops"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}jpg/rooftops.jpg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}jpg/rooftops.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="sea"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}jpg/sea.jpg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}jpg/sea.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="skatepark"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}jpg/skatepark.jpg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}jpg/skatepark.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
     &[data-type="snow"] {
         border: 1px solid #aaa;
         box-sizing: border-box;
-        background: rgb(255, 255, 255) url('@{imagesPath}jpg/snow.jpg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}jpg/snow.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
     }
 
@@ -497,7 +449,7 @@ ul {
 
     /* Bonus icon */
     &[data-type="present"] {
-        background: rgb(255, 255, 255) url('@{imagesPath}svg/present.svg') no-repeat 100% 100%;
+        background: rgb(255, 255, 255) url('#{$imagesPath}svg/present.svg') no-repeat 100% 100%;
     }
 }
 

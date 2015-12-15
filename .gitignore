@@ -2,5 +2,3 @@
 .tmp
 dist
 node_modules
-style.css
-script.js
