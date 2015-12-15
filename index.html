@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="PixdelNG">
+<head>
+    <title>PixDel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <link href="dist/style.css" rel="stylesheet" />
+    <link rel="icon" href="assets/images/logo.png" />
+    <meta property="og:url"           content="http://pixdel.com/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="PixDel" />
+    <meta property="og:description"   content="Html5 and JS, time killer game where you need to delete pixels by lining them up by type, in horizontal, vertical or diagonal lines" />
+    <meta property="og:image"         content="http://pixdel.com/assets/images/logo.png" />
+    <meta property="fb:app_id"        content="146418009056932" />
+</head>
+<body>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({appId: '146418009056932', xfbml: true, version: 'v2.5'});
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="preload">
+    <img src="/assets/images/logo.png" />
+    <img src="/assets/images/icons.png"/>
+    <img src="/assets/images/svg/present.svg" />
+    <img src="/assets/images/svg/icons/burger.svg" />
+    <img src="/assets/images/svg/icons/flash.svg" />
+    <img src="/assets/images/svg/icons/airplane.svg" />
+    <img src="/assets/images/svg/icons/camera.svg" />
+    <img src="/assets/images/svg/icons/quaver.svg" />
+    <img src="/assets/images/svg/icons/settings.svg" />
+    <img src="/assets/images/svg/icons/theater.svg" />
+    <img src="/assets/images/jpg/balloon.jpg" />
+    <img src="/assets/images/jpg/fire.jpg" />
+    <img src="/assets/images/jpg/fireworks.jpg" />
+    <img src="/assets/images/jpg/lake.jpg" />
+    <img src="/assets/images/jpg/rooftops.jpg" />
+    <img src="/assets/images/jpg/sea.jpg" />
+    <img src="/assets/images/jpg/skatepark.jpg" />
+    <img src="/assets/images/jpg/snow.jpg" />
+</div>
+
+<div class="pixdel" ng-controller="PixdelController">
+
+    <div class="loading">
+        <div class="loader-1"></div>
+        <div class="loader-2"></div>
+        <div class="loader-3"></div>
+    </div>
+
+    <div class="pixdel-start-page  page-hidden" ng-cloak>
+        <h1 class="pixdel-title">Pix<span>D</span>el</h1>
+
+        <ul class="pixdel-level">
+            <li ng-repeat="(index, levelType) in levelTypes | orderBy : '-fields':false" class="{{ levelType.typeClassName }}">
+                <a href="" class="pixdel-level-button button-aqua" ng-click="chooseLevel( index )">{{ levelType.typeName }}</a>
+            </li>
+        </ul>
+
+        <a class="share js-share" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://pixdel.com">Share on Facebook</a>
+
+        <a href="" class="pixdel-fullscreen" ng-click="fullScreen()">Press F/Esc to toggle fullscreen</a>
+        <p class="created-by">Created by <a href="/cv">Mike Sudyn</a></p>
+    </div>
+
+    <div class="pixdel-level-page  page-hidden">
+        <h1 class="pixdel-title">Pix<span>D</span>el</h1>
+
+        <ul class="pixdel-level">
+            <li ng-repeat="(index, level) in difficultyLevel | orderBy : '-fields':false" class="{{ level.levelClassName }}">
+                <a href="" class="pixdel-level-button button-aqua" ng-click="startGame( index )">{{ level.levelName }}</a>
+            </li>
+            <li class="back">
+                <a href="" class="pixdel-level-button button-orange" ng-click="backToStart()">Back</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pixdel-game-page  page-hidden">
+        <div class="pixdel-header">
+            <div class="pixdel-score">Score: <span class="pixdel-score-num" ng-bind="score">{{ score }}</span>
+                <span class="pixdel-bonus">+<span class="pixdel-bonus-num" ng-bind="bonus">{{ bonus }}</span> bonus</span>
+            </div>
+
+            <a href="" class="button-pause button-aqua" ng-click="pauseGame()">Pause</a>
+            <a href="" class="button-back button-aqua" ng-click="backToStart()">< Back</a>
+
+            <div class="pixdel-level-name">Level: {{ options.levelName }}</div>
+        </div>
+
+        <div class="pixdel-table">
+            <div class="pixdel-tr" ng-repeat="line in field track by $index">
+                <div class="pixdel-td" ng-repeat="block in field track by $index">
+                    <div class="pixdel-div hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pixdel-modal-overlay" ng-click="gameModalWindow.close()"></div>
+    <div class="pixdel-modal-window">
+        <a class="pixdel-modal-window-close" ng-click="gameModalWindow.close()">x</a>
+        <div class="pixdel-modal-window-content"></div>
+    </div>
+</div>
+
+<script src="dist/script.js"></script>
+
+<script>
+    // google analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-40640561-1', 'pixdel.com');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
+
