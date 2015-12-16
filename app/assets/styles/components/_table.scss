@@ -3,17 +3,17 @@
     width: 100%;
     border-radius: 3px;
     box-sizing: border-box;
-    background: #ccc;
-    border: 1px solid #ccc;
+    background: $color-grey-light;
+    border: 1px solid $color-grey-light;
     overflow: hidden;
 }
 
 .pixdel-td {
     float: left;
     margin: 0 1px 1px 0;
-    background: #fff;
+    background: $color-white;
     border-radius: 3px;
-    box-shadow: 0 0 3px #ccc inset;
+    box-shadow: 0 0 3px $color-grey-light inset;
 
     &:last-child {
         margin-right: 0;
