@@ -1,9 +1,15 @@
+$image-path: '/assets/images/';
+
+$color-transparent: rgba(0, 0, 0, 0);
+$color-transparent-black: rgba(0, 0, 0, 0.75);
+
 $color-white: rgba(255, 255, 255, 1);
 $color-black: rgba(0, 0, 0, 1);
 $color-blue: rgba(56, 178, 206, 1);
 $color-grey: rgba(170, 170, 170, 1);
 $color-grey-light: rgba(204, 204, 204, 1);
+$color-orange: rgb(255,116,0);
 
-$color-transparent: rgba(0, 0, 0, 0);
+$color-title-red: rgba(204,53,53,1);
 
-$title-red: rgba(204,53,53,1);
+$breakpoint: 500px;

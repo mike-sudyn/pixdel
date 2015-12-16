@@ -51,47 +51,45 @@
 <div class="pixdel" ng-controller="PixdelController">
 
     <div class="loading">
-        <div class="loader-1"></div>
-        <div class="loader-2"></div>
-        <div class="loader-3"></div>
+        <div class="loader--1"></div>
+        <div class="loader--2"></div>
+        <div class="loader--3"></div>
     </div>
 
     <div class="pixdel-start-page  page-hidden" ng-cloak>
-        <h1 class="pixdel-title">Pix<span>D</span>el</h1>
+        <h1 class="pixdel-title">Pix<span class="pixdel-title--d">D</span>el</h1>
 
         <ul class="pixdel-level">
             <li ng-repeat="(index, levelType) in levelTypes | orderBy : '-fields':false" class="{{ levelType.typeClassName }}">
-                <a href="" class="level-button button-aqua" ng-click="chooseLevel( index )">{{ levelType.typeName }}</a>
+                <a href="" class="button button__level button__aqua" ng-click="chooseLevel( index )">{{ levelType.typeName }}</a>
             </li>
         </ul>
 
         <a class="share js-share" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://pixdel.com">Share on Facebook</a>
 
         <a href="" class="pixdel-fullscreen" ng-click="fullScreen()">Press F/Esc to toggle fullscreen</a>
-        <p class="created-by">Created by <a href="/cv">Mike Sudyn</a></p>
+        <p class="created-by">Created by <a href="/cv" class="created-by--me">Mike Sudyn</a></p>
     </div>
 
     <div class="pixdel-level-page  page-hidden">
-        <h1 class="pixdel-title">Pix<span>D</span>el</h1>
+        <h1 class="pixdel-title">Pix<span class="pixdel-title--d">D</span>el</h1>
 
         <ul class="pixdel-level">
             <li ng-repeat="(index, level) in difficultyLevel | orderBy : '-fields':false" class="{{ level.levelClassName }}">
-                <a href="" class="level-button button-aqua" ng-click="startGame( index )">{{ level.levelName }}</a>
+                <a href="" class="button button__level button__aqua" ng-click="startGame( index )">{{ level.levelName }}</a>
             </li>
             <li class="back">
-                <a href="" class="level-button button-orange" ng-click="backToStart()">Back</a>
+                <a href="" class="button button__level button__orange" ng-click="backToStart()">Back</a>
             </li>
         </ul>
     </div>
 
     <div class="pixdel-game-page  page-hidden">
         <div class="pixdel-header">
-            <div class="pixdel-score">Score: <span class="pixdel-score-num" ng-bind="score">{{ score }}</span>
-                <span class="pixdel-bonus">+<span class="pixdel-bonus-num" ng-bind="bonus">{{ bonus }}</span> bonus</span>
-            </div>
-
-            <a href="" class="button-pause button-aqua" ng-click="pauseGame()">Pause</a>
-            <a href="" class="button-back button-aqua" ng-click="backToStart()">< Back</a>
+            <a href="" class="button button__back button__aqua" ng-click="backToStart()">Back</a>
+            <div class="pixdel-score">Score: <span class="pixdel-score-num" ng-bind="score">{{ score }}</span></div>
+            <div class="pixdel-bonus">+<span class="pixdel-bonus-num" ng-bind="bonus">{{ bonus }}</span> bonus</div>
+            <a href="" class="button button__pause button__aqua" ng-click="pauseGame()">Pause</a>
 
             <div class="pixdel-level-name">Level: {{ options.levelName }}</div>
         </div>
@@ -105,10 +103,11 @@
         </div>
     </div>
 
-    <div class="pixdel-modal-overlay" ng-click="gameModalWindow.close()"></div>
-    <div class="pixdel-modal-window">
-        <a class="pixdel-modal-window-close" ng-click="gameModalWindow.close()">x</a>
-        <div class="pixdel-modal-window-content"></div>
+    <div class="pixdel-modal pixdel-modal--hidden" ng-click="gameModalWindow.close()">
+        <div class="pixdel-modal--window">
+            <a class="pixdel-modal--close"></a>
+            <div class="pixdel-modal--content"></div>
+        </div>
     </div>
 </div>
 

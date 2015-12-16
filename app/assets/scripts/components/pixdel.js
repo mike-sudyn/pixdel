@@ -77,12 +77,13 @@ function PixDel($, angular) {
                 pixdelDiv: 'pixdel-div',
                 reserved: 'reserved',
                 hidden: 'hidden',
-                buttonPause: 'button-pause',
+                buttonPause: 'button__pause',
                 scoreNum: 'pixdel-score-num',
                 bonusNum: 'pixdel-bonus-num',
-                modalWindow: 'pixdel-modal-window',
-                modalWindowContent: 'pixdel-modal-window-content',
-                modalClose: 'pixdel-modal-window-close',
+                modalWindow: 'pixdel-modal--window',
+                modalWindowContent: 'pixdel-modal--content',
+                modalWindowHidden: 'pixdel-modal--hidden',
+                modalClose: 'pixdel-modal--close',
                 active: 'active',
                 pause: 'pause'
             },
@@ -95,7 +96,7 @@ function PixDel($, angular) {
                 gamePage: '.pixdel-game-page',
                 gamePageHeader: '.pixdel-header',
                 share: '.js-share',
-                buttonBack: '.button-back',
+                buttonBack: '.button__back',
                 table: '.pixdel-table',
                 tr: '.' + classes.tr,
                 td: '.' + classes.td,
@@ -119,7 +120,7 @@ function PixDel($, angular) {
             $gamePageHeader = $(selectors.gamePageHeader, $wrapper),
             $table = $(selectors.table, $wrapper),
             $modalWindow = $(selectors.modalWindow, $wrapper),
-            $modalOverlay = $modalWindow.prev(),
+            $modalOverlay = $modalWindow.parent(),
             timer = 'Search and remove blocks';
         $scope.play = false;
 
@@ -499,17 +500,19 @@ function PixDel($, angular) {
         /* Game modal window */
         $scope.gameModalWindow = {
             close: function () {
-                if ($modalWindow.attr('data-type') === classes.pause && $modalWindow.attr('data-type', '')) {
+                if ($modalOverlay.attr('data-type') === classes.pause) {
                     $scope.continueGame();
                 } else {
                     $scope.stopGame();
                 }
-                $modalWindow.add($modalOverlay).fadeOut(200);
+                $modalOverlay.attr('data-type', '').addClass(classes.modalWindowHidden);
             },
+
             open: function (content, className) {
-                $modalWindow.children(selectors.modalWindowContent).html(content);
-                $modalWindow.attr('data-type', className).show();
-                $modalOverlay.show();
+                $modalOverlay.attr('data-type', className)
+                    .find(selectors.modalWindowContent)
+                    .html(content);
+                $modalOverlay.removeClass(classes.modalWindowHidden);
             }
         };
 
@@ -544,7 +547,6 @@ function PixDel($, angular) {
             }
         });
     }]);
-
 }
 
 module.exports = PixDel;
