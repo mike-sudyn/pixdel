@@ -453,7 +453,7 @@ function PixDel($, angular) {
             if ($scope.bonus > 0) {
                 $scope.$apply();
 
-                $(selectors.bonusNum).parent().fadeIn(200, function () {
+                $(selectors.bonusNum).parent().stop(true).fadeIn(200, function () {
                     $(this).delay(500).fadeOut(500, function () {
                         $scope.bonus = 0;
                     });
