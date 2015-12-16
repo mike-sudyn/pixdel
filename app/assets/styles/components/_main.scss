@@ -1,0 +1,219 @@
+$imagesPath: '/assets/images/';
+
+html {
+    height: 100%;
+}
+
+body {
+    background: #000 url('#{$imagesPath}background.png') repeat 50% 0;
+    margin: 0;
+    height: 100%;
+}
+
+a {
+    outline: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.pixdel {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1024px;
+    min-width: 320px;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.pixdel-level li {
+    margin: 0 0 18px 0;
+    list-style-type: none;
+
+    .level-button {
+        display: block;
+        padding: 10px 0;
+        color: #000;
+        text-decoration: none;
+        text-align: center;
+        font: bold 18px/18px sans-serif;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.level-button,
+.button-back,
+.button-pause {
+    border-radius: 5px;
+    box-shadow: 0 0 5px #000;
+    transition: all 0.2s linear 0s;
+}
+
+.level-button:hover,
+.button-back:hover,
+.button-pause:hover {
+    box-shadow: 0 0 5px #fff, 0 0 18px #fff inset;
+    text-shadow: 0 0 8px #FFFFFF, 0 0 8px #FFFFFF;
+}
+
+.pixdel-title {
+    cursor: default;
+    display: inline-block;
+    margin: 45px 0 30px 0;
+    padding: 0;
+    color: #38b2ce;
+    text-align: center;
+    font-size: 44px;
+    line-height: 44px;
+    text-shadow: 0 0 5px #000,  0 0 8px #000;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+
+    span {
+        color: rgba(204,53,53,1);
+    }
+}
+
+.pixdel-fullscreen {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    opacity: 0.5;
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.created-by {
+    color: #888;
+    font-size: 12px;
+
+    a {
+        transition: all 0.2s linear 0s;
+        opacity: 0.5;
+        color: #fff;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+}
+
+.pixdel-header {
+    position: relative;
+    padding: 6px 0 0 2px;
+    height: 34px;
+}
+
+.pixdel-level-name {
+    float: right;
+    display: inline-block;
+    margin: 12px 7px 0 0;
+    font: normal 16px/16px Sans-serif;
+    color: #38b2ce;
+}
+
+.button-pause,
+.button-back {
+    padding: 6px 20px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font: bold 14px/14px 'arial';
+}
+
+.button-pause {
+    float: right;
+}
+
+.button-back {
+    float: left;
+    margin-right: 5px;
+}
+
+.pixdel-score {
+    position: absolute;
+    bottom: 5px;
+    left: 101px;
+    color: #38B2CE;
+    font: 16px/16px sans-serif;
+}
+
+.pixdel-bonus {
+    color: rgb(255,116,0);
+    font: 18px/18px sans-serif;
+    display: none;
+}
+
+.button-aqua {
+    border: 1px solid rgb(0,153,153);
+    background: rgb(0,153,153);
+    background: linear-gradient(135deg, rgba(0,153,153,1) 0%, rgba(51,204,204,1) 40%, rgba(92,204,204,1) 60%, rgba(0,124,122,1) 100%);
+}
+
+.button-orange {
+    border: 1px solid rgb(204, 67, 0);
+    background: rgb(204, 67, 0);
+    background: linear-gradient(135deg, rgba(204, 67, 0, 1) 0%, rgba(204, 103, 53, 1) 40%, rgba(204, 130, 93, 1) 60%, rgba(166, 56, 0, 1) 100%);
+}
+
+/* Styles for small screens */
+@media only screen and (max-width: 400px) {
+
+    .pixdel-title {
+        margin: 25px 0 15px 0;
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .pixdel-level li {
+        margin: 0 0 10px 0;
+
+        a {
+            padding: 6px 0;
+            font: bold 16px/16px sans-serif;
+        }
+    }
+
+    .pixdel-fullscreen {
+        display: none;
+    }
+
+    .pixdel-header {
+        padding: 6px 2px 0 2px;
+        height: 26px;
+    }
+
+    .pixdel-score {
+        bottom: 5px;
+        left: 55px;
+        color: #38B2CE;
+        font: 12px/12px sans-serif;
+    }
+
+    .pixdel-level-name {
+        margin: 3px 5px 0 0;
+        font: normal 12px/22px sans-serif;
+    }
+
+    .button-pause,
+    .button-back {
+        margin-top: 1px;
+        padding: 4px 5px;
+        font: bold 10px/10px 'arial';
+    }
+
+    .button-back {
+        margin-right: 2px;
+    }
+}

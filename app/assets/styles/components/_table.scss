@@ -1,0 +1,65 @@
+.pixdel-table {
+    padding: 1px 0 0 1px;
+    width: 100%;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background: #ccc;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.pixdel-td {
+    float: left;
+    margin: 0 1px 1px 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #ccc inset;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.pixdel-tr {
+    .pixdel-td {
+        &:first-child .pixdel-div.active {
+            transform: scale(1.3) translate(12%);
+        }
+
+        &:last-child .pixdel-div.active {
+            transform: scale(1.3) translate(-12%);
+        }
+    }
+
+    &:first-child {
+        .pixdel-div.active {
+            transform: scale(1.3) translate(0, 12%);
+        }
+
+        .pixdel-td {
+            &:first-child .pixdel-div.active {
+                transform: scale(1.3) translate(12%, 12%);
+            }
+
+            &:last-child .pixdel-div.active {
+                transform: scale(1.3) translate(-12%, 12%);
+            }
+        }
+    }
+
+    &:last-child {
+        .pixdel-div.active {
+            transform: scale(1.3) translate(0, -12%);
+        }
+
+        .pixdel-td {
+            &:last-child .pixdel-div.active {
+                transform: scale(1.3) translate(-12%, -12%);
+            }
+
+            &:first-child .pixdel-div.active {
+                transform: scale(1.3) translate(12%, -12%);
+            }
+        }
+    }
+}

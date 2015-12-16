@@ -1,0 +1,19 @@
+.share {
+    text-align: center;
+    display: block;
+    margin-bottom: 8px;
+    transition: all 0.2s linear 0s;
+    opacity: 0.5;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &.popup-share {
+        color: #000;
+        margin-bottom: 0;
+    }
+}
