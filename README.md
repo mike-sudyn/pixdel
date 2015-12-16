@@ -12,6 +12,7 @@ Html5 time killer game where you need to delete pixels by lining them up by colo
 
 5.1 Execute from command line to build application into dist folder:
 * `gulp`
+
 5.2 Or build application and start server:
 * `gulp serve`
 
