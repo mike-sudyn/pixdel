@@ -444,6 +444,7 @@ function PixDel($, angular) {
                 $scope.scoresToAdd = $scope.scoresToAdd + 1;
             });
 
+            $scope.speed = $scope.speed - 10;
             $scope.countScores($scope.scoresToAdd + $scope.bonus);
         };
 
