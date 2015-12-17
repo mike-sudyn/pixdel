@@ -1,7 +1,7 @@
 {
   "name": "Pixdel",
   "version": "2.0.0",
-  "description": "Html5 time killer game where you need to delete pixels by lining them up by color, in horizontal, vertical or diagonal lines",
+  "description": "Html5 time killer game where you need to delete pixels by lining them up by type, in horizontal, vertical or diagonal lines",
   "repository": "https://github.com/mike-sudyn/pixdel",
   "license": "MIT",
   "devDependencies": {
