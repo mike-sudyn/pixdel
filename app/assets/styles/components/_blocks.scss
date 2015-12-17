@@ -1,8 +1,8 @@
 .pixdel-div {
-    position: relative;
     z-index: 1;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    position: relative;
     border-radius: 3px;
     animation-fill-mode: both;
     transition: all 200ms ease-in-out;
@@ -14,8 +14,8 @@
 
     &.active {
         z-index: 5;
-        box-shadow: 0 1px 5px $color-black;
         transform: scale(1.3);
+        box-shadow: 0 1px 5px $color-black;
     }
 
     &[data-type="blue"] {
@@ -59,117 +59,117 @@
 
     /* Block icons */
     &[data-type="burger"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}svg/icons/burger.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}svg/icons/burger.svg') no-repeat 100% 100%;
     }
 
     &[data-type="flash"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}svg/icons/flash.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}svg/icons/flash.svg') no-repeat 100% 100%;
     }
 
     &[data-type="airplane"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}svg/icons/airplane.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}svg/icons/airplane.svg') no-repeat 100% 100%;
     }
 
     &[data-type="camera"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}svg/icons/camera.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}svg/icons/camera.svg') no-repeat 100% 100%;
     }
 
     &[data-type="quaver"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}svg/icons/quaver.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}svg/icons/quaver.svg') no-repeat 100% 100%;
     }
 
     &[data-type="settings"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}svg/icons/settings.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}svg/icons/settings.svg') no-repeat 100% 100%;
     }
 
     &[data-type="theater"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}svg/icons/theater.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}svg/icons/theater.svg') no-repeat 100% 100%;
     }
 
     &[data-type="light-bulb"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}svg/icons/light-bulb.svg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}svg/icons/light-bulb.svg') no-repeat 100% 100%;
     }
 
 
     // Photo icon
     &[data-type="balloon"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}jpg/balloon.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}jpg/balloon.jpg') no-repeat 100% 100%;
     }
 
     &[data-type="fire"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}jpg/fire.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}jpg/fire.jpg') no-repeat 100% 100%;
     }
 
     &[data-type="fireworks"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}jpg/fireworks.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}jpg/fireworks.jpg') no-repeat 100% 100%;
     }
 
     &[data-type="lake"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}jpg/lake.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}jpg/lake.jpg') no-repeat 100% 100%;
     }
 
     &[data-type="rooftops"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}jpg/rooftops.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}jpg/rooftops.jpg') no-repeat 100% 100%;
     }
 
     &[data-type="sea"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}jpg/sea.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}jpg/sea.jpg') no-repeat 100% 100%;
     }
 
     &[data-type="skatepark"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}jpg/skatepark.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}jpg/skatepark.jpg') no-repeat 100% 100%;
     }
 
     &[data-type="snow"] {
-        border: 1px solid $color-grey;
         box-sizing: border-box;
-        background: $color-white url('#{$image-path}jpg/snow.jpg') no-repeat 100% 100%;
         background-size: 100% 100%;
+        border: 1px solid $color-grey;
+        background: $color-white url('#{$image-path}jpg/snow.jpg') no-repeat 100% 100%;
     }
 
 

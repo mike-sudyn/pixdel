@@ -17,37 +17,37 @@
 }
 
 .loading {
-    position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -25px;
     margin-left: -25px;
+    position: absolute;
 
     .loader--1,
     .loader--2,
     .loader--3 {
-        border-radius: 3px;
-        position: absolute;
-        transition: 0.4s linear all;
         width: 50px;
         height: 50px;
+        position: absolute;
+        border-radius: 3px;
+        transition: 0.4s linear all;
         border: 1px solid rgb(0, 153, 153);
         background: rgb(0, 153, 153);
         background: linear-gradient(135deg, rgba(0, 153, 153, 1) 0%, rgba(51, 204, 204, 1) 40%, rgba(92, 204, 204, 1) 60%, rgba(0, 124, 122, 1) 100%);
     }
 
     .loader--1 {
-        animation: loading 1s infinite;
         left: -55px;
+        animation: loading 1s infinite;
     }
 
     .loader--2 {
-        animation: loading 1s 0.1s infinite;
         left: 0;
+        animation: loading 1s 0.1s infinite;
     }
 
     .loader--3 {
-        animation: loading 1s 0.2s infinite;
         left: 55px;
+        animation: loading 1s 0.2s infinite;
     }
 }

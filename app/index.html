@@ -87,10 +87,11 @@
     <div class="pixdel-game-page  page-hidden">
         <div class="pixdel-header">
             <a href="" class="button button__back button__aqua" ng-click="backToStart()">Back</a>
-            <div class="pixdel-score">Score: <span class="pixdel-score-num" ng-bind="score">{{ score }}</span></div>
-            <div class="pixdel-bonus">+<span class="pixdel-bonus-num" ng-bind="bonus">{{ bonus }}</span> bonus</div>
-            <a href="" class="button button__pause button__aqua" ng-click="pauseGame()">Pause</a>
+            <div class="pixdel-score">Score: <span class="pixdel-score--num" ng-bind="score">{{ score }}</span></div>
 
+            <div class="pixdel-bonus">+<span class="pixdel-bonus--num"></span> bonus</div>
+
+            <a href="" class="button button__pause button__aqua" ng-click="pauseGame()">Pause</a>
             <div class="pixdel-level-name">Level: {{ options.levelName }}</div>
         </div>
 

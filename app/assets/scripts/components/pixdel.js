@@ -78,8 +78,11 @@ function PixDel($, angular) {
                 reserved: 'reserved',
                 hidden: 'hidden',
                 buttonPause: 'button__pause',
-                scoreNum: 'pixdel-score-num',
-                bonusNum: 'pixdel-bonus-num',
+                scoreNum: 'pixdel-score--num',
+                scoreNumBig: 'pixdel-score--num__big',
+                bonus: 'pixdel-bonus',
+                bonusNum: 'pixdel-bonus--num',
+                bonusShow: 'pixdel-bonus__show',
                 modalWindow: 'pixdel-modal--window',
                 modalWindowContent: 'pixdel-modal--content',
                 modalWindowHidden: 'pixdel-modal--hidden',
@@ -104,6 +107,7 @@ function PixDel($, angular) {
                 reserved: '.' + classes.reserved,
                 buttonPause: '.' + classes.buttonPause,
                 scoreNum: '.' + classes.scoreNum,
+                bonus: '.' + classes.bonus,
                 bonusNum: '.' + classes.bonusNum,
                 modalWindow: '.' + classes.modalWindow,
                 modalWindowContent: '.' + classes.modalWindowContent,
@@ -121,6 +125,8 @@ function PixDel($, angular) {
             $table = $(selectors.table, $wrapper),
             $modalWindow = $(selectors.modalWindow, $wrapper),
             $modalOverlay = $modalWindow.parent(),
+            $score = $(selectors.scoreNum, $wrapper),
+            $bonus = $(selectors.bonus),
             timer = 'Search and remove blocks';
         $scope.play = false;
 
@@ -151,8 +157,10 @@ function PixDel($, angular) {
             /* Switch to game page */
             setTimeout($scope.adjustCellHeight, 1);
             $levelPage.addClass(classes.hiddenPage);
-            $gamePage.removeClass(classes.hiddenPage);
-            $scope.randomAppendBlock();
+            setTimeout(function(){
+                $gamePage.removeClass(classes.hiddenPage);
+                $scope.randomAppendBlock();
+            }, 100);
         };
 
 
@@ -418,6 +426,7 @@ function PixDel($, angular) {
 
         $scope.removeBlocks = function (elementsToRemove) {
             $scope.bonus = 0;
+            $scope.scoresToAdd = 0;
 
             if (elementsToRemove.length > $scope.options.blocksMin) {
                 $scope.bonus = ( elementsToRemove.length - $scope.options.blocksMin ) * 2;
@@ -432,32 +441,31 @@ function PixDel($, angular) {
                     $cell.removeClass(classes.reserved);
                     $scope.field[cell.y][cell.x] = undefined;
                 }, 300);
-                $scope.countScores(index);
+                $scope.scoresToAdd = $scope.scoresToAdd + 1;
             });
+
+            $scope.countScores($scope.scoresToAdd + $scope.bonus);
         };
 
 
-        $scope.countScores = function (i) {
-            /* Count scores + bonuses */
-            $scope.score = $scope.score + ( 1 + $scope.bonus );
-            $scope.$apply();
-
-            /* Animate score and bonus */
-            $(selectors.scoreNum)
-                .delay(100 * i)
-                .stop(true)
-                .animate({'font-size': '30'}, 300, function () {
-                    $(this).stop(true).animate({'font-size': '16'}, 300);
-                });
+        /* Count scores + bonuses */
+        $scope.countScores = function (score) {
+            $.each(new Array(score), function(i){
+                setTimeout(function(){
+                    $scope.score = $scope.score + 1;
+                    $scope.$apply();
+                    $score.addClass(classes.scoreNumBig);
+                    setTimeout(function() { $score.removeClass(classes.scoreNumBig); }, 200 * (i + 1));
+                }, 100 * (i + 1));
+            });
 
             if ($scope.bonus > 0) {
-                $scope.$apply();
+                var bonusClone = $bonus.clone();
 
-                $(selectors.bonusNum).parent().stop(true).fadeIn(200, function () {
-                    $(this).delay(500).fadeOut(500, function () {
-                        $scope.bonus = 0;
-                    });
-                });
+                bonusClone.insertAfter($bonus).find(selectors.bonusNum).html($scope.bonus);
+                bonusClone.addClass(classes.bonusShow);
+                setTimeout(function() { bonusClone.remove(); }, 1000);
+                $scope.bonus = 0;
             }
         };
 
