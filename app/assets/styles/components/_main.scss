@@ -85,6 +85,8 @@ body {
     font: 1rem/1.8rem sans-serif;
 
     &--num {
+        top: 0;
+        right: 0;
         left: 103%;
         position: absolute;
         transition: all 0.3s ease;
